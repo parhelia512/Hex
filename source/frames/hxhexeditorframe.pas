@@ -627,6 +627,7 @@ end;
 procedure THexEditorFrame.SetParent(AParent: TWinControl);
 begin
   inherited;
+  if csDestroying in ComponentState then exit;
   if (AParent <> nil) and (FHexEditor = nil) then
     CreateHexEditor;
   ApplyHexParams(HexParams);

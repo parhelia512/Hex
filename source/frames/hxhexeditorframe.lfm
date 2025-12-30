@@ -3,6 +3,7 @@ object HexEditorFrame: THexEditorFrame
   Height = 395
   Top = 0
   Width = 812
+  LCLVersion = '4.99.0.0'
   TabOrder = 0
   DesignLeft = 340
   DesignTop = 128

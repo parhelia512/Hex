@@ -627,13 +627,12 @@ end;
 procedure THexEditorFrame.SetParent(AParent: TWinControl);
 begin
   inherited;
-  if csDestroying in ComponentState then exit;
-  if (AParent <> nil) and (FHexEditor = nil) then
+  if (AParent = nil) then exit;
+  if (FHexEditor = nil) then
     CreateHexEditor;
   ApplyHexParams(HexParams);
   ApplyColorsToHexEditor(ColorParams[GetScreenMode], FHexEditor);
-  if AParent <> nil then
-    LoadFromIni;
+  LoadFromIni;
   if HexEditor.CanFocus then
     HexEditor.SetFocus;
 end;
